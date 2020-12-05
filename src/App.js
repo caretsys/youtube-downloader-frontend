@@ -12,17 +12,29 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const onSearch = async (url) => {
     setIsLoading(true)
-    const input = url.split('-')
-    const resourceType = input[0]
+    const refinedURL = url.split('-')
+    const resourceType = refinedURL[0]
     try {
-      if (resourceType === 'A') {
-        await fetchAudio(input[1])
-      }
-      if (resourceType === 'V') {
-        await fetchVideo(input[1])
+      switch (true) {
+        case resourceType === 'A':
+          await fetchAudio(refinedURL[1])
+          break
+        case resourceType === 'V':
+          await fetchVideo(refinedURL[1])
+          break
+        default:
+          setIsLoading(false)
+          notification.error({
+            message: 'You ought to request for a valid youtube link.',
+          })
+          return
       }
     } catch {
       setIsLoading(false)
+      notification.error({
+        message: 'Server could not resolve the file you requested',
+      })
+      return
     }
     setIsLoading(false)
     notification.success({
