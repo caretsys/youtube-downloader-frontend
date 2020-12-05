@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/youtube-downloader-frontend/static/css/main.f998687c.chunk.css",
+    "main.js": "/youtube-downloader-frontend/static/js/main.dfe10cb7.chunk.js",
+    "main.js.map": "/youtube-downloader-frontend/static/js/main.dfe10cb7.chunk.js.map",
+    "runtime-main.js": "/youtube-downloader-frontend/static/js/runtime-main.337028a2.js",
+    "runtime-main.js.map": "/youtube-downloader-frontend/static/js/runtime-main.337028a2.js.map",
+    "static/css/2.6f338a1f.chunk.css": "/youtube-downloader-frontend/static/css/2.6f338a1f.chunk.css",
+    "static/js/2.e5477801.chunk.js": "/youtube-downloader-frontend/static/js/2.e5477801.chunk.js",
+    "static/js/2.e5477801.chunk.js.map": "/youtube-downloader-frontend/static/js/2.e5477801.chunk.js.map",
+    "index.html": "/youtube-downloader-frontend/index.html",
+    "static/css/2.6f338a1f.chunk.css.map": "/youtube-downloader-frontend/static/css/2.6f338a1f.chunk.css.map",
+    "static/css/main.f998687c.chunk.css.map": "/youtube-downloader-frontend/static/css/main.f998687c.chunk.css.map",
+    "static/js/2.e5477801.chunk.js.LICENSE.txt": "/youtube-downloader-frontend/static/js/2.e5477801.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.337028a2.js",
+    "static/css/2.6f338a1f.chunk.css",
+    "static/js/2.e5477801.chunk.js",
+    "static/css/main.f998687c.chunk.css",
+    "static/js/main.dfe10cb7.chunk.js"
+  ]
+}
