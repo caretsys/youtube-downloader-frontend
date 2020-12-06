@@ -1,6 +1,6 @@
 {
   "name": "yt-downloader",
-  "homepage": "http://yt.caretsys.tech",
+  "homepage": "https://yt.caretsys.tech",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
