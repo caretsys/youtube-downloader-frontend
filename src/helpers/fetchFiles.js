@@ -13,7 +13,7 @@ export const fetchAudio = async function (url) {
   videoTitle(toGetTitle, function (err, title) {
     let a = document.createElement('a')
     a.href = link
-    a.download = title + '.wav'
+    a.download = title + '.mp3'
     document.body.appendChild(a)
     a.click()
     a.remove()

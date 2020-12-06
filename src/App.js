@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Alert, notification } from 'antd'
-import TextLoop from 'react-text-loop'
 import SearchFile from './components/SearchFile'
 import Result from './components/Result'
 import 'antd/dist/antd.css'
@@ -10,17 +9,16 @@ import { fetchAudio, fetchVideo } from './helpers/fetchFiles'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
-  const onSearch = async (url) => {
+  const onSearch = async (searchParams) => {
     setIsLoading(true)
-    const refinedURL = url.split('-')
-    const resourceType = refinedURL[0]
+    const { prefix, url } = searchParams
     try {
       switch (true) {
-        case resourceType === 'A':
-          await fetchAudio(refinedURL[1])
+        case prefix === 'A':
+          await fetchAudio(url)
           break
-        case resourceType === 'V':
-          await fetchVideo(refinedURL[1])
+        case prefix === 'V':
+          await fetchVideo(url)
           break
         default:
           setIsLoading(false)
@@ -45,12 +43,7 @@ function App() {
     <div className="App">
       <Alert
         banner
-        message={
-          <TextLoop mask>
-            <div>For video download: V-https://youtu.be/45Ckhnmuw2o</div>
-            <div>For audio download: A-https://youtu.be/45Ckhnmuw2o</div>
-          </TextLoop>
-        }
+        message="YT-Downloader: A Caret Systems Product!"
         type="info"
         showIcon
       />
