@@ -20,7 +20,7 @@ const SearchFile = ({ onSearch, isLoading }) => {
       style={{ width: '100%' }}
       initialValues={{ prefix: 'A' }}
     >
-      <Form.Item name="url" style={{ width: '80%' }}>
+      <Form.Item id="search-bar" name="url" style={{ width: '80%' }}>
         <Input
           addonBefore={prefixSelector}
           placeholder="e.g. https://www.youtube.com/watch?v=UxJcdeQ0vPI"

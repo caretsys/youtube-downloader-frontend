@@ -5,7 +5,7 @@ import Result from './components/Result'
 import 'antd/dist/antd.css'
 import './styles/app.css'
 
-import { fetchAudio, fetchVideo } from './helpers/fetchFiles'
+import { fetchMedia } from './helpers/fetchFiles'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
@@ -15,10 +15,10 @@ function App() {
     try {
       switch (true) {
         case prefix === 'A':
-          await fetchAudio(url)
+          await fetchMedia(url, 'audio')
           break
         case prefix === 'V':
-          await fetchVideo(url)
+          await fetchMedia(url, 'video')
           break
         default:
           setIsLoading(false)

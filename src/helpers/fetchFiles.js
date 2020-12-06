@@ -1,9 +1,9 @@
 import axios from 'axios'
 import videoTitle from 'get-youtube-title'
 
-export const fetchAudio = async function (url) {
+export const fetchMedia = async function (url, type) {
   const response = await axios.get(
-    `https://caret-yt-download.herokuapp.com/audio?url=${url}`,
+    `https://caret-yt-download.herokuapp.com/${type}?url=${url}`,
     {
       responseType: 'blob',
     }
@@ -13,17 +13,11 @@ export const fetchAudio = async function (url) {
   videoTitle(toGetTitle, function (err, title) {
     let a = document.createElement('a')
     a.href = link
-    a.download = title + '.mp3'
+    let extension = type === 'video' ? '.mp4' : '.mp3'
+    a.download = title + extension
     document.body.appendChild(a)
     a.click()
     a.remove()
     return response
   })
-}
-
-export const fetchVideo = async function (url) {
-  const response = await axios.get(
-    `https://caret-yt-download.herokuapp.com/video?url=${url}`
-  )
-  return response
 }
